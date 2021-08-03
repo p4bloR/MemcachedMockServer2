@@ -38,7 +38,7 @@ The Server class opens a local TCP Server on a desired port. All incoming client
  1.	Open the Ubuntu terminal and navigate to the MemcachedMockServer2 folder
  2.	Enter the following on the terminal: ruby RunServer.rb
     If the port is free the message "Server is running" should appear on screen, if instead you see "Port is busy maybe try another" change the port value on the         settings.txt file in the same directory and do step 1 again.
- 3.	With the server running now open a new terminal tab and without leaving the MemcachedMockServer folder enter  the following in the terminal: ruby RunClient.rb
+ 3.	With the server running now open a new terminal tab and without leaving the MemcachedMockServer2 folder enter  the following in the terminal: ruby RunClient.rb
     If the client can't connect to the server you'll see a message saying "Connection refused, is the server running", in which case I recommend you interrupt the         server process and go back to step 1. When the client connects to the server you'll see he message "connected to server appear in the terminal.
  4.	Now you have successfully connected a client to the server, you can connect as many clients as you like by repeating step 3.
 
