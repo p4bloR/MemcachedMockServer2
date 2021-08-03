@@ -43,78 +43,136 @@ With the client connected now you can execute set, get, gets, add, replace, appe
 This is a list of sample commands you can use to test all memcached commands. Once you want to close the server just enter "close server".
 
 Let's add something
+
 User input: "add element1 0 900 2"
+
 User input: "hi"
+
 Response: "STORED"
 
 Retrieve it
 User input: "get element1"
+
 Response: "VALUE element1 0 2"
+
 Response: "hi"
+
 Response: "END"
 
 Override it
+
 User input: "set element1 0 900 5"
+
 User input: "hello"
+
 Response: "STORED"
+
 
 Add another one
+
 User input: "add element2 0 900 4"
+
 User input: "hola"
+
 Response: "STORED"
+
 
 And retrieve both
+
 User input: "get element1 element2"
+
 Response: "VALUE element1 0 5"
+
 Response: "hello"
+
 Response: "VALUE element2 0 4"
+
 Response: "hola"
+
 Response: "END"
+
 
 Lets use the replace command
+
 User input: "replace element2 0 900 7"
+
 User input: "wassup?"
+
 Response: "STORED"
+
 
 And retrieve to see if it worked
+
 User input: "get element2"
+
 Response: "VALUE element2 0 7"
+
 Response: "wassup?"
+
 Response: "END"
+
 
 Now we try append
+
 User input: "append element1 0 900 14"
+
 User input: ", how are you?"
+
 Response: "STORED"
+
 
 And also prepend
+
 User input: "prepend element2 0 900 5"
+
 User input: "hey, "
+
 Response: "STORED"
+
 
 And check the results
+
 User input: get element1 element2
+
 Response: "VALUE element1 0 19"
+
 Response: "hello, how are you?"
+
 Response: "VALUE element2 0 12"
+
 Response: "hey, wassup?"
+
 Response: "END"
+
 
 Lets use gets to get the CAS data
+
 User input: "gets element1"
+
 Response: "VALUE element1 0 19 5"
+
 Response: "hello, how are you?"
+
 Response: "END"
+
 
 And let's use cas
+
 User input: "cas element1 0 900 3 5"
+
 User input: "bye"
+
 Response: "STORED"
 
+
 User input: "get element1"
+
 Response: "VALUE element1 0 3"
+
 Response: "bye"
+
 Response: "END"
+
 
 Now let's try cas again using the same cas number, it shouldn't work.
 Cas should
